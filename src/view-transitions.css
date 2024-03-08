@@ -1,0 +1,21 @@
+::view-transition-group(*) {
+  animation-timing-function: ease-out;
+  animation-duration: 300ms;
+  mix-blend-mode: normal;
+  overflow: hidden;
+}
+
+
+::view-transition-new(*):only-child {
+  animation: var(--animation-slide-in-down) forwards;
+}
+
+::view-transition-old(*):only-child {
+  animation: var(--animation-fade-out) forwards;
+}
+
+
+::view-transition-old(root),
+::view-transition-new(root){
+  animation: none;
+}

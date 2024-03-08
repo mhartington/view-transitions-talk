@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [RouterLinkWithHref, RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
+    <aside>
+      <h2>Animation Approach</h2>
+      <ul>
+        <li>
+          <a routerLink="/ng-animations">Angular Animations</a>
+        </li>
+        <li>
+          <a routerLink="/view-transitions">View Transitions</a>
+        </li>
+      </ul>
+    </aside>
+    <main>
     <router-outlet></router-outlet>
+    </main>
   `,
   styles: [],
 })

@@ -1,21 +1,26 @@
-::view-transition-group(*) {
-  animation-timing-function: ease-out;
-  animation-duration: 300ms;
-  mix-blend-mode: normal;
-  overflow: hidden;
+/* ::view-transition-group(*) { */
+/*   animation-timing-function: ease-out; */
+/*   animation-duration: 300ms; */
+/*   mix-blend-mode: normal; */
+/*   overflow: hidden; */
+/* } */
+
+.router-wrapper {
+  view-transition-name: main-outlet;
 }
 
-
-::view-transition-new(*):only-child {
-  animation: var(--animation-slide-in-down) forwards;
+/* ::view-transition-new(main-outlet){ */
+/*   animation:var(--animation-slide-in-up); */
+/*   animation-delay: 500ms; */
+/* } */
+/* ::view-transition-new(main-outlet):only-child{ */
+/*   animation:var(--animation-slide-in-up); */
+/* } */
+::view-transition-old(main-outlet) {
+  animation: var(--animation-slide-out-down), var(--animation-fade-out);
 }
-
-::view-transition-old(*):only-child {
-  animation: var(--animation-fade-out) forwards;
-}
-
 
 ::view-transition-old(root),
-::view-transition-new(root){
+::view-transition-new(root) {
   animation: none;
 }

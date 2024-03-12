@@ -8,7 +8,7 @@ import { provideRouter, withViewTransitions } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withViewTransitions()),
+    provideRouter(routes, withViewTransitions({skipInitialTransition: true})),
     provideAnimationsAsync(),
     provideZonelessChangeDetection()
   ],

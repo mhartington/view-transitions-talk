@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { TodoStoreService } from '../../services/todo-service';
 import { Todo } from '../../types/todo';
+import { listAnimation } from '../../animations/list-animation';
 
 @Component({
   template: `
@@ -8,7 +9,7 @@ import { Todo } from '../../types/todo';
       <h3>View Transitions</h3>
       <ul>
         @for (todo of store.todos(); track todo.id) {
-          <li [style.view-transition-name]="'todo-item-' + todo.id">
+          <li>
             <p>{{ todo.name }}</p>
             <button (click)="removeTodo(todo)">🗑</button>
           </li>
@@ -19,18 +20,15 @@ import { Todo } from '../../types/todo';
   `,
   selector: 'view-transtitions',
   standalone: true,
+  animations: [listAnimation],
 })
 export class ViewTransitions {
   store = inject(TodoStoreService);
 
   addTodo() {
-    (document as any).startViewTransition(() => {
       this.store.addTodo();
-    });
   }
   removeTodo(todo: Todo) {
-    (document as any).startViewTransition(() => {
       this.store.remove(todo);
-    });
   }
 }

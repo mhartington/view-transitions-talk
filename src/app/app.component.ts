@@ -10,14 +10,14 @@ import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
       <h2>Animation Approach</h2>
       <ul>
         <li>
-          <a routerLink="/ng-animations">Angular Animations</a>
+          <a routerLink="/ng-animations">List One</a>
         </li>
         <li>
-          <a routerLink="/view-transitions">View Transitions</a>
+          <a routerLink="/view-transitions">List Two</a>
         </li>
       </ul>
     </aside>
-    <main>
+    <main class="router-wrapper">
     <router-outlet></router-outlet>
     </main>
   `,

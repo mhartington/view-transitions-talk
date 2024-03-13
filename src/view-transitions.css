@@ -1,26 +1,26 @@
-/* ::view-transition-group(*) { */
-/*   animation-timing-function: ease-out; */
-/*   animation-duration: 300ms; */
-/*   mix-blend-mode: normal; */
-/*   overflow: hidden; */
-/* } */
-
-.router-wrapper {
-  view-transition-name: main-outlet;
+::view-transition-group(*) {
+  mix-blend-mode: normal;
+  overflow: clip;
 }
 
-/* ::view-transition-new(main-outlet){ */
-/*   animation:var(--animation-slide-in-up); */
-/*   animation-delay: 500ms; */
-/* } */
-/* ::view-transition-new(main-outlet):only-child{ */
-/*   animation:var(--animation-slide-in-up); */
-/* } */
-::view-transition-old(main-outlet) {
-  animation: var(--animation-slide-out-down), var(--animation-fade-out);
+/* Fab Button should stay still */
+.fab {
+  view-transition-name: fab-button;
 }
-
-::view-transition-old(root),
-::view-transition-new(root) {
+::view-transition-group(fab-button) {
   animation: none;
+}
+
+/* Page Title should just handle things */
+.page-title {
+  view-transition-name: page-title;
+  contain: layout;
+  width: fit-content;
+}
+
+::view-transition-new(page-title),
+::view-transition-old(page-title) {
+  height: 100%;
+  object-fit: none;
+  overflow: clip;
 }

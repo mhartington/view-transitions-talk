@@ -6,8 +6,8 @@ import { listAnimation } from '../../animations/list-animation';
 @Component({
   template: `
     <section>
-      <h3>View Transitions</h3>
-      <ul>
+      <h3 class="page-title">List Two</h3>
+      <ul [@listAnimation]="store.todos().length">
         @for (todo of store.todos(); track todo.id) {
           <li>
             <p>{{ todo.name }}</p>
@@ -26,9 +26,9 @@ export class ViewTransitions {
   store = inject(TodoStoreService);
 
   addTodo() {
-      this.store.addTodo();
+    this.store.addTodo();
   }
   removeTodo(todo: Todo) {
-      this.store.remove(todo);
+    this.store.remove(todo);
   }
 }

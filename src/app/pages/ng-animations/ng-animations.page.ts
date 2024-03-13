@@ -6,7 +6,7 @@ import { listAnimation } from '../../animations/list-animation';
   selector: 'ng-animations',
   template: `
     <section>
-      <h3>Angular Animations</h3>
+      <h3 class="page-title">Angular Animations</h3>
       <ul [@listAnimation]="store.todos().length">
         @for (todo of store.todos(); track todo.id) {
           <li>

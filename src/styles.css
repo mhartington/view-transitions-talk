@@ -66,10 +66,6 @@ aside {
           opacity 200ms linear;
       }
 
-      &:hover:not(.selected) {
-        --opacity: 0.3;
-        --background: var(--gray-7);
-      }
 
       &.selected {
         --opacity: 0.3;

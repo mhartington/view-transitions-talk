@@ -87,6 +87,7 @@ ul {
   margin-inline: 0;
   padding-inline-start: 0;
   li {
+    background-color: var(--surface-1);
     padding-inline: 1em;
     padding-block: 1em;
     width: 100%;

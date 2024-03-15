@@ -17,7 +17,6 @@
   contain: layout;
   width: fit-content;
 }
-
 ::view-transition-new(page-title),
 ::view-transition-old(page-title) {
   height: 100%;

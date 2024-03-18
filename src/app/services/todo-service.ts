@@ -30,6 +30,7 @@ export class TodoStoreService {
     }
     effect(() => {
       localStorage.setItem('todo-items', JSON.stringify(this.todos()));
+      this.ref.tick();
     });
   }
 
@@ -38,12 +39,10 @@ export class TodoStoreService {
       ...val,
       { name: `new-item-${Date.now()}`, id: crypto.randomUUID() },
     ]);
-    this.ref.tick();
   }
   remove(todo: Todo) {
     this.todos.update((state) =>
       state.filter((todoToFind: Todo) => todoToFind.id !== todo.id),
     );
-    this.ref.tick();
   }
 }

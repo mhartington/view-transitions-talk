@@ -39,10 +39,10 @@ import {
       ]),
       transition(':decrement', [
         group([
-          query('li:leave', [animate('250ms ease-out', style({ opacity: 0 }))]),
+          query('li:leave', [animate('250ms ease-out', style({ opacity: 0 }))], {optional: true}),
           query('li:leave ~ li:not(:leave)', [
             animate( '300ms ease-out', style({ transform: 'translate3d(0, calc(-100% + 1px), 0)', }),),
-          ]),
+          ], {optional: true}),
         ]),
       ]),
     ]),
